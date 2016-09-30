@@ -1,4 +1,7 @@
-test('adds 1 + 2 to equal 3', () => {
-  const sum = require('../src');
-  expect(sum(1, 2)).toBe(3);
+import App from '../src/';
+
+describe('Home page', () => {
+  it('Should have a page heading', () => {
+    expect(App.toContain('h1'));
+  });
 });
