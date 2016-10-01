@@ -47,6 +47,18 @@ describe('Search component', () => {
       stub.called.should.be.true();
     });
 
+    it.skip('sends search query to API', () = {
+
+    });
+
+    it.skip('gets response from API', () = {
+
+    });
+
+    it.skip('throws error if there is no response from the api', () = {
+
+    });
+
   });
 
 });
