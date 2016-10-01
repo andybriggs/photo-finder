@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => {
-  return <h1>Hello world</h1>
+  return <h1>Flickr Photo Search</h1>
 };
 
 export default Header;

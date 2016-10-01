@@ -4,7 +4,7 @@
   "description": "Test project",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha",
+    "test": "mocha -r should ./test-setup/jsdom.js --compilers js:babel-core/register src/**/*spec.js",
     "build": "webpack"
   },
   "author": "Andy Briggs",
@@ -16,7 +16,9 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "enzyme": "^2.4.1",
+    "jsdom": "^9.5.0",
     "mocha": "^3.1.0",
+    "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.5",
     "should": "^11.1.0",
     "webpack": "^1.13.2",

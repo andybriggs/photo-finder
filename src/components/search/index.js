@@ -18,7 +18,7 @@ class Search extends Component {
   render(){
     return (
       <div>
-        <label for="search">Search photos:</label>
+        <label htmlFor="search">Search photos:</label>
         <input id="search" type="text" value={this.state.value} onChange={this.handleChange} placeholder="e.g. Stars" />
       </div>
     );
