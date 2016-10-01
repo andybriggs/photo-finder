@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import store from '../../store';
 import request from 'superagent';
 
 class Search extends Component {
@@ -20,7 +21,10 @@ class Search extends Component {
       .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
       .end(function(err, res){
         const urlList = _this.createUrlList(res);
-        console.log(urlList);
+        store.dispatch({
+          type: 'UPDATE',
+          urlList
+        });
       });
   }
 
