@@ -1,1 +1,2 @@
-export Header from './header.js';
+export Header from './header';
+export Search from './search';

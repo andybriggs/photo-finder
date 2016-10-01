@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Header } from './components';
+import { Header, Search } from './components';
 
 const App = () => {
   return (<div>
     <Header />
+    <Search />
   </div>)
 };
 
