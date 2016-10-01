@@ -21,6 +21,7 @@
     "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.5",
     "should": "^11.1.0",
+    "sinon": "^1.17.6",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   },

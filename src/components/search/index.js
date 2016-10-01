@@ -17,10 +17,10 @@ class Search extends Component {
 
   render(){
     return (
-      <div>
+      <form>
         <label htmlFor="search">Search photos:</label>
         <input id="search" type="text" value={this.state.value} onChange={this.handleChange} placeholder="e.g. Stars" />
-      </div>
+      </form>
     );
   }
 }

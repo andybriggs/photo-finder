@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Search from './index';
+import sinon from 'sinon';
 
 describe('Search component', () => {
 
@@ -8,6 +9,11 @@ describe('Search component', () => {
 
   before(() =>{
     searchDom = mount(<Search />);
+  });
+
+
+  it('Should be in a form', () => {
+    searchDom.find('form').should.have.length(1);
   });
 
   describe('Search input', () => {
@@ -29,6 +35,16 @@ describe('Search component', () => {
        searchDom.setState({ value: 'Hammer time' });
        searchDom.find('input').node.value.should.equal('Hammer time');
      });
+
+  });
+
+  describe('Search button', () => {
+    it('Should return the input value', () => {
+      const onClick = sinon.spy();
+      searchDom.find('button').simulate('click');
+      const inputValue = searchDom.find('input').node.value;
+      console.log(onClick);
+    });
 
   });
 
