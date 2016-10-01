@@ -1,49 +1,50 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Search from './index';
 import sinon from 'sinon';
 
 describe('Search component', () => {
 
-  let searchDom;
+  let wrapper;
 
   before(() =>{
-    searchDom = mount(<Search />);
+    wrapper = mount(<Search />);
   });
 
-
   it('Should be in a form', () => {
-    searchDom.find('form').should.have.length(1);
+    wrapper.find('form').should.have.length(1);
   });
 
   describe('Search input', () => {
 
-    it('Should be an html input', () => {
-      searchDom.find('input').should.have.length(1);
+    it('should be an html input', () => {
+      wrapper.find('input').should.have.length(1);
     });
 
-    it('Should have an associated label', () => {
-      searchDom.find('label').node.getAttribute('for').should.equal('search');
-      searchDom.find('input').node.getAttribute('id').should.equal('search');
+    it('should have an associated label', () => {
+      wrapper.find('label').node.getAttribute('for').should.equal('search');
+      wrapper.find('input').node.getAttribute('id').should.equal('search');
     });
 
-    it('Should have an empty string as a default value', () => {
-      searchDom.find('input').node.value.should.equal('');
+    it('should have an empty string as a default value', () => {
+      wrapper.find('input').node.value.should.equal('');
     });
 
-    it('Value should change when the state is updated', () => {
-       searchDom.setState({ value: 'Hammer time' });
-       searchDom.find('input').node.value.should.equal('Hammer time');
+    it('value should change when the state is updated', () => {
+       wrapper.setState({ inputValue: 'Hammer time' });
+       wrapper.find('input').node.value.should.equal('Hammer time');
      });
 
   });
 
   describe('Search button', () => {
-    it('Should return the input value', () => {
-      const onClick = sinon.spy();
-      searchDom.find('button').simulate('click');
-      const inputValue = searchDom.find('input').node.value;
-      console.log(onClick);
+
+    it.skip('calls handleSubmit', () => {
+      // Not working
+      const shallowWrapper = shallow(<Search />);
+      const stub = sinon.stub(shallowWrapper.instance(), 'handleSubmit');
+      shallowWrapper.find('button').simulate('click', { preventDefault() {} });
+      stub.called.should.be.true();
     });
 
   });
