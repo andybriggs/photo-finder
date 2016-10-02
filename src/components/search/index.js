@@ -24,7 +24,9 @@ class Search extends Component {
     request
       .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
       .end((err, res) => {
-        _this.updateGallery(_this.createUrlList(res));
+        const photoList = _this.createPhotoList(res);
+        _this.updateGallery(photoList);
+        // _this.updateViewer(1);
       });
   }
 
@@ -35,7 +37,14 @@ class Search extends Component {
     });
   }
 
-  createUrlList(res) {
+  updateViewer = (selectedImg) => {
+    store.dispatch({
+      type: 'UPDATE',
+      selectedImg
+    });
+  }
+
+  createPhotoList(res) {
     let photoList = [];
     const resultsObject = JSON.parse(res.text);
     const photos = resultsObject.photos.photo;

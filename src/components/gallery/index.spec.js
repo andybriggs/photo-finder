@@ -7,7 +7,7 @@ describe('Gallery component', () => {
   let wrapper;
 
   before(() =>{
-    wrapper = mount(<Gallery urls={['foo', 'bar']}/>);
+    wrapper = mount(<Gallery photoList={['foo', 'bar']}/>);
   });
 
   it('Should be a in a list', () => {

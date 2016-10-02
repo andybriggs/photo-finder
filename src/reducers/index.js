@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import galleryState from './galleryState';
+import viewerState from './viewerState';
 
 const appReducer = combineReducers({
-  galleryState
+  galleryState,
+  viewerState
 });
 
 export default appReducer;

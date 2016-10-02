@@ -9,18 +9,21 @@ export default class App extends Component {
      this.state = store.getState();
    }
    componentDidMount() {
-     this.menuState = store.subscribe(this.updateGallery.bind(this));
+     this.appState = store.subscribe(this.updateGallery.bind(this));
    }
    updateGallery = () => {
      this.setState(store.getState());
      return this.state;
    }
   render() {
+    let photoList = this.state.galleryState.photoList;
+    let selectedImg = photoList ? photoList[this.state.viewerState.selectedImg] : null;
+    console.log(this.state.galleryState.photoList);
     return (<div>
       <Header />
       <Search />
-      <Viewer />
-      <Gallery photoList={this.state.galleryState.photoList} />
+      <Viewer selectedImg={selectedImg} />
+      <Gallery photoList={photoList} />
     </div>)
   }
 };

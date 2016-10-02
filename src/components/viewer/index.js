@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Viewer = (props) => {
-  if(props.photo) {
-    return <img src={props.photo} />
+  if(props.selectedImg) {
+    return <img src={props.selectedImg.url} />
   } else {
     return false;
   }

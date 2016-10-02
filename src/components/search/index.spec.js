@@ -2,7 +2,6 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Search from './index';
 import sinon from 'sinon';
-import store from '../../store';
 
 describe('Search component', () => {
 
@@ -57,7 +56,6 @@ describe('Search component', () => {
       wrapper.setState({ inputValue: 'Hammer time' });
       wrapper.find('button').simulate('click', { preventDefault() {} });
       const appState = store.getState();
-      console.log(appState);
     });
 
   });

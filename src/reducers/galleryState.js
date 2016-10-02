@@ -1,5 +1,5 @@
 const initialState = {
-  photoList: []
+  photoList: null
 };
 
 // Reducer
