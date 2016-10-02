@@ -2,15 +2,16 @@ import React from 'react';
 import store from '../../store';
 
 const Pagination = (props) => {
-  if(props.pageCount) {
-    const pageCount = Math.round(props.pageCount / 15);
+
+  if(props.photoCount) {
+    const pageCount = createPageCount(props.photoCount);
     return (<ul>
       {createPaging(pageCount)}
     </ul>)
   } else {
     return false;
   }
-};
+}
 
 const createPaging = (pageCount) => {
   let paging = [];
@@ -20,8 +21,17 @@ const createPaging = (pageCount) => {
   return paging;
 }
 
+const createPageCount = (photoCount) => {
+  return Math.round(photoCount / 15);
+}
+
 const handleClick = (index, e) => {
   e.preventDefault();
+  const page = index + 1;
+  store.dispatch({
+    type: 'UPDATE-PAGE',
+    page
+  });
 }
 
 export default Pagination;
