@@ -18,7 +18,6 @@ export default class App extends Component {
   render() {
     let photoList = this.state.galleryState.photoList;
     let selectedImg = photoList ? photoList[this.state.viewerState.selectedImg] : null;
-    console.log(this.state.viewerState.selectedImg);
     return (<div>
       <Header />
       <Search />
