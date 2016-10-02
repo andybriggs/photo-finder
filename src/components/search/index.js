@@ -1,6 +1,9 @@
 import React, { PropTypes, Component } from 'react';
 import store from '../../store';
 import request from 'superagent';
+import { Icon } from 'react-fa';
+import { css } from 'aphrodite/no-important';
+import style from './style';
 
 class Search extends Component {
 
@@ -55,10 +58,20 @@ class Search extends Component {
 
   render(){
     return (
-      <form>
+      <form className={css(style.form)}>
         <label htmlFor="search">Search photos:</label>
-        <input id="search" type="text" value={this.state.inputValue} onChange={this.handleChange} placeholder="e.g. Stars" />
-        <button onClick={this.handleSubmit}>Search</button>
+        <input
+          id="search"
+          type="text"
+          value={this.state.inputValue}
+          onChange={this.handleChange}
+          className={css(style.input)}
+          placeholder="e.g. Stars"
+        />
+        <button className={css(style.button)} onClick={this.handleSubmit}>
+          <Icon name="search" />
+          <span>Search</span>
+        </button>
       </form>
     );
   }
