@@ -7,7 +7,7 @@ const Gallery = (props) => {
     return (
       <ul>
         {pageList.map((photo, index) => {
-          return(<li key={index}><a href="" onClick={handleClick.bind(this, index)}><img src={photo.url} alt={photo.title} /></a></li>);
+          return(<li key={index}><a href="" onClick={handleClick.bind(this, photo.photoIndex)}><img src={photo.url} alt={photo.title} /></a></li>);
         })}
       </ul>
     )
@@ -17,9 +17,12 @@ const Gallery = (props) => {
 };
 
 const createPageList = (page, photoList) => {
-  const end = page * 15;
-  const start = end -15;
+  const end = parseInt(page * 15);
+  const start = parseInt(end -15);
   const pageList = photoList.slice(start, end);
+  for(page in pageList) {
+    pageList[page].photoIndex = start + parseInt(page);
+  }
   return pageList;
 }
 

@@ -23,7 +23,7 @@ export default class App extends Component {
     return (<div>
       <Header />
       <Search />
-      <Viewer selectedImg={selectedImg} />
+      <Viewer selectedImg={selectedImg} selectedImgNumber={this.state.galleryState.selectedImg} />
       <Gallery photoList={photoList} page={this.state.galleryState.page} />
       <Pagination photoCount={photoCount} currentPage={this.state.galleryState.page} />
     </div>)

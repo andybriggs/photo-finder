@@ -14,4 +14,8 @@ describe('Viewer component', () => {
     wrapper.find('img').should.have.length(1);
   });
 
+  it('should have a next and previous button', () => {
+    wrapper.find('li').should.have.length(2);
+  });
+
 });

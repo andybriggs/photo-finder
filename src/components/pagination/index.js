@@ -24,7 +24,7 @@ const Pagination = (props) => {
 const createPaging = (pageCount) => {
   let paging = [];
   for (let i = 0; i < pageCount; i++) {
-    paging.push(<li key={i}><a href="" onClick={handleClick.bind(this, i)}>{i + 1}</a></li>)
+    paging.push(<li key={i}><a href="" onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
   }
   return paging;
 }
