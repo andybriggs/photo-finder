@@ -17,7 +17,7 @@ export default class App extends Component {
    }
   render() {
     let photoList = this.state.galleryState.photoList;
-    let selectedImg = photoList ? photoList[this.state.viewerState.selectedImg] : null;
+    let selectedImg = photoList ? photoList[this.state.galleryState.selectedImg] : null;
     let showPaging = photoList ? true : false;
     let photoCount = photoList ? photoList.length : 0;
     return (<div>
