@@ -7,7 +7,7 @@ describe('Pagination component', () => {
   let wrapper;
 
   before(() =>{
-    wrapper = mount(<Pagination pages={100} />);
+    wrapper = mount(<Pagination photoCount={100} />);
   });
 
   it('Should be a in a list', () => {

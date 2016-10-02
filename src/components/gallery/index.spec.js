@@ -9,7 +9,7 @@ describe('Gallery component', () => {
 
   before(() =>{
     mockList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n' ,'o', 'p'];
-    wrapper = mount(<Gallery photoList={mockList}/>);
+    wrapper = mount(<Gallery photoList={mockList} page={1}/>);
   });
 
   it('Should be a in a list', () => {
@@ -18,7 +18,7 @@ describe('Gallery component', () => {
 
   it('Should have first 15 list items', () => {
     mockList.should.have.length(16);
-    wrapper.find('li').should.have.length(16);
+    wrapper.find('li').should.have.length(15);
   });
 
 });
