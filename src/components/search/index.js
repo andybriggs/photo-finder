@@ -70,7 +70,7 @@ class Search extends Component {
         />
         <button className={css(style.button)} onClick={this.handleSubmit}>
           <Icon name="search" />
-          <span>Search</span>
+          <span className={css(style.buttonText)}>Search</span>
         </button>
       </form>
     );
