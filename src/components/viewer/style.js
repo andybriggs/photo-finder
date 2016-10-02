@@ -3,12 +3,8 @@ import commonStyles from '../commonStyles';
 
 const styles = StyleSheet.create({
   container: commonStyles.container,
-  header: {
-    textAlign: 'center',
-    color: '#fff'
-  },
-  title: {
-      color: '#fab630'
+  img: {
+    width: '100%'
   }
 });
 

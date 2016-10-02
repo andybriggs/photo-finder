@@ -1,10 +1,12 @@
 import React from 'react';
 import store from '../../store';
+import { css } from 'aphrodite/no-important';
+import style from './style';
 
 const Viewer = ({ selectedImg, selectedImgNumber }) => {
   if(selectedImg) {
-    return (<div>
-        <img src={selectedImg.url} alt={selectedImg.title} />
+    return (<div className={css(style.container)}>
+        <img src={selectedImg.url} alt={selectedImg.title} className={css(style.img)}/>
         <ul>
           <li><a href="" onClick={handleClick.bind(this, selectedImgNumber, "prev")}>&lt;</a></li>
           <li><a href="" onClick={handleClick.bind(this, selectedImgNumber, "next")}>&gt;</a></li>
