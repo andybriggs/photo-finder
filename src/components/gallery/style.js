@@ -31,6 +31,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)'
+  },
+  loading: {
+    fontSize: 22,
+    color: '#fff',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   }
 });
 

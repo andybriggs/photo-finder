@@ -1,7 +1,8 @@
 const initialState = {
   photoList: null,
   page: 1,
-  selectedImg: 1
+  selectedImg: 1,
+  loading: false
 };
 
 // Reducer
@@ -22,6 +23,11 @@ const galleryState = (state = initialState, action) => {
         ...state,
         page: action.page,
         selectedImg: action.selectedImg
+      };
+    case 'LOADING':
+      return {
+        ...state,
+        loading: action.loading
       };
     default:
       return state;

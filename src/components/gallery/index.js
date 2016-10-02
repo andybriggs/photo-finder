@@ -1,10 +1,11 @@
 import React from 'react';
+import { Icon } from 'react-fa';
 import store from '../../store';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 
 const Gallery = (props) => {
-  if(props.photoList) {
+  if(props.photoList && props.loading === false) {
     const pageList = createPageList(props.page, props.photoList);
     return (
       <div className={css(style.container, style.gallery)}>
@@ -20,6 +21,8 @@ const Gallery = (props) => {
         </ul>
       </div>
     )
+  } else if (props.loading === true) {
+    return (<Icon className={css(style.loading)} name="circle-o-notch" spin />)
   } else {
     return false;
   }
