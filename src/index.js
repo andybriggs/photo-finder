@@ -19,7 +19,7 @@ export default class App extends Component {
     return (<div>
       <Header />
       <Search />
-      <Gallery urls={this.state.galleryState.urls} />
+      <Gallery photoList={this.state.galleryState.photoList} />
     </div>)
   }
 };

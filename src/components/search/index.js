@@ -28,21 +28,24 @@ class Search extends Component {
       });
   }
 
-  updateGallery = (urlList) => {
+  updateGallery = (photoList) => {
     store.dispatch({
       type: 'UPDATE',
-      urlList
+      photoList
     });
   }
 
   createUrlList(res) {
-    let urlList = [];
+    let photoList = [];
     const resultsObject = JSON.parse(res.text);
     const photos = resultsObject.photos.photo;
     for (let i = 0; i < photos.length; i++) {
-      urlList.push(`https://farm${photos[i].farm}.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`)
+      photoList.push({
+        url: `https://farm${photos[i].farm}.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`,
+        title: photos[i].title
+      })
     }
-    return urlList;
+    return photoList;
   }
 
   getValue = () => {

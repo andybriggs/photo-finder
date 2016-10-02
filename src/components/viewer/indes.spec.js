@@ -10,7 +10,7 @@ describe('Viewer component', () => {
     wrapper = mount(<Viewer url="https://farm6.staticflickr.com/5579/29763197130_29a06a7f75.jpg"/>);
   });
 
-  it('Should be a in an img', () => {
+  it('should have an image', () => {
     wrapper.find('img').should.have.length(1);
   });
 

@@ -1,12 +1,12 @@
 const initialState = {
-  urls: []
+  photoList: []
 };
 
 // Reducer
 const galleryState = (state = initialState, action) => {
   switch (action.type) {
     case 'UPDATE':
-      return { urls: action.urlList };
+      return { photoList: action.photoList };
     default:
       return state;
   }

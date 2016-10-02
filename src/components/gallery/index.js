@@ -3,8 +3,8 @@ import React from 'react';
 const Gallery = (props) => {
   return (
     <ul>
-      {props.urls.map((url, index) => {
-        return(<li key={index}><img src={url} /></li>);
+      {props.photoList.map((photo, index) => {
+        return(<li key={index}><img src={photo.url} alt={photo.title} /></li>);
       })}
     </ul>
   )
