@@ -16,8 +16,11 @@ const styles = StyleSheet.create({
   img: {
     width:' 100%',
     maxWidth: 600,
-    margin: '0 auto',
-    display: 'block'
+    display: 'block',
+    position: 'relative',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   },
   navList: {
     margin: 0,

@@ -11,14 +11,17 @@ const styles = StyleSheet.create({
   },
   linkWrap: {
     display: 'inline-block',
-    marginLeft: 5
+    fontSize: 14
   },
   link: {
     color: '#fff',
-    padding: 10,
+    padding: 5,
     textDecoration: 'none',
+    '@media only screen and (min-width: 390px)': {
+      padding: 10
+    },
     ':hover': {
-      background: '#fab630'
+      background: '#fab630',
     }
   }
 

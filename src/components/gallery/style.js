@@ -11,12 +11,14 @@ const styles = StyleSheet.create({
     padding: 0
   },
   photoWrapper: {
+    position: 'relative',
     float: 'left',
     width: '18%',
     marginRight: '2.5%',
     height: 100,
     overflow: 'hidden',
     marginBottom: 10,
+    border: '1px solid rgba(255,255,255,0.5)',
     ':nth-child(5n+5)': {
       marginRight: 0
     },
@@ -25,7 +27,10 @@ const styles = StyleSheet.create({
     }
   },
   photo: {
-    maxWidth: '100%'
+    maxWidth: '100%',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)'
   }
 });
 
