@@ -5,8 +5,8 @@ import Header from './index';
 describe('Header component', () => {
 
   it('Should have a heading', () => {
-    const headerDom = mount(<Header />);
-    headerDom.find('h1').should.have.length(1);
+    const wrapper = mount(<Header />);
+    wrapper.find('h1').should.have.length(1);
   });
 
 });

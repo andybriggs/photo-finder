@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Search from './index';
 import sinon from 'sinon';
+import store from '../../store';
 
 describe('Search component', () => {
 
@@ -39,24 +40,24 @@ describe('Search component', () => {
 
   describe('Search button', () => {
 
-    it.skip('calls handleSubmit', () => {
-      // Not working
+    it('calls handleSubmit', () => {
       const shallowWrapper = shallow(<Search />);
-      const stub = sinon.stub(shallowWrapper.instance(), 'handleSubmit');
+      let componentInstance = shallowWrapper.instance();
+      let stub = sinon.stub(componentInstance, 'handleSubmit');
+
+      componentInstance.forceUpdate()
+      shallowWrapper.update()
+
       shallowWrapper.find('button').simulate('click', { preventDefault() {} });
       stub.called.should.be.true();
     });
 
-    it.skip('sends search query to API', () = {
-
-    });
-
-    it.skip('gets response from API', () = {
-
-    });
-
-    it.skip('throws error if there is no response from the api', () = {
-
+    it.skip('should update gallery', () => {
+      // not working
+      wrapper.setState({ inputValue: 'Hammer time' });
+      wrapper.find('button').simulate('click', { preventDefault() {} });
+      const appState = store.getState();
+      console.log(appState);
     });
 
   });

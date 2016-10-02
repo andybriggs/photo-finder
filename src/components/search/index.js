@@ -15,17 +15,24 @@ class Search extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const query = this.state.inputValue;
+    this.searchApi();
+  }
+
+  searchApi = () => {
+    const query = this.getValue();
     const _this = this;
     request
       .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
-      .end(function(err, res){
-        const urlList = _this.createUrlList(res);
-        store.dispatch({
-          type: 'UPDATE',
-          urlList
-        });
+      .end((err, res) => {
+        _this.updateGallery(_this.createUrlList(res));
       });
+  }
+
+  updateGallery = (urlList) => {
+    store.dispatch({
+      type: 'UPDATE',
+      urlList
+    });
   }
 
   createUrlList(res) {
