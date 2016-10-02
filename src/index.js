@@ -20,7 +20,6 @@ export default class App extends Component {
     let selectedImg = photoList ? photoList[this.state.viewerState.selectedImg] : null;
     let showPaging = photoList ? true : false;
     let photoCount = photoList ? photoList.length : 0;
-    console.log(this.state);
     return (<div>
       <Header />
       <Search />
