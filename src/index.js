@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import store from './store';
-import { Header, Search, Viewer, Gallery } from './components';
+import { Header, Search, Viewer, Gallery, Pagination } from './components';
 
 export default class App extends Component {
   constructor() {
@@ -18,11 +18,14 @@ export default class App extends Component {
   render() {
     let photoList = this.state.galleryState.photoList;
     let selectedImg = photoList ? photoList[this.state.viewerState.selectedImg] : null;
+    let showPaging = photoList ? true : false;
+    let pages = photoList ? photoList.length : 0;
     return (<div>
       <Header />
       <Search />
       <Viewer selectedImg={selectedImg} />
       <Gallery photoList={photoList} />
+      <Pagination pages={pages} />
     </div>)
   }
 };

@@ -22,7 +22,7 @@ class Search extends Component {
     const query = this.getValue();
     const _this = this;
     request
-      .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
+      .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&safe_search=moderate&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
       .end((err, res) => {
         const photoList = _this.createPhotoList(res);
         _this.updateGallery(photoList);
@@ -33,13 +33,6 @@ class Search extends Component {
     store.dispatch({
       type: 'UPDATE-GALLERY',
       photoList
-    });
-  }
-
-  updateViewer = (selectedImg) => {
-    store.dispatch({
-      type: 'UPDATE-VIEWER',
-      selectedImg
     });
   }
 
