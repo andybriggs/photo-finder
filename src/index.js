@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import store from './store';
-import { Header, Search, Gallery } from './components';
+import { Header, Search, Viewer, Gallery } from './components';
 
 export default class App extends Component {
   constructor() {
@@ -19,6 +19,7 @@ export default class App extends Component {
     return (<div>
       <Header />
       <Search />
+      <Viewer />
       <Gallery photoList={this.state.galleryState.photoList} />
     </div>)
   }

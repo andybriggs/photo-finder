@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Viewer = (props) => {
-  return <img src={props.url} />
+  if(props.photo) {
+    return <img src={props.photo} />
+  } else {
+    return false;
+  }
 };
 
 export default Viewer;
