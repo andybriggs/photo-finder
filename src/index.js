@@ -25,7 +25,7 @@ export default class App extends Component {
       <Search />
       <Viewer selectedImg={selectedImg} />
       <Gallery photoList={photoList} page={this.state.galleryState.page} />
-      <Pagination photoCount={photoCount} />
+      <Pagination photoCount={photoCount} currentPage={this.state.galleryState.page} />
     </div>)
   }
 };
