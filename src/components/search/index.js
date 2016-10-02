@@ -26,20 +26,19 @@ class Search extends Component {
       .end((err, res) => {
         const photoList = _this.createPhotoList(res);
         _this.updateGallery(photoList);
-        // _this.updateViewer(1);
       });
   }
 
   updateGallery = (photoList) => {
     store.dispatch({
-      type: 'UPDATE',
+      type: 'UPDATE-GALLERY',
       photoList
     });
   }
 
   updateViewer = (selectedImg) => {
     store.dispatch({
-      type: 'UPDATE',
+      type: 'UPDATE-VIEWER',
       selectedImg
     });
   }

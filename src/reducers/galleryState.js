@@ -5,7 +5,7 @@ const initialState = {
 // Reducer
 const galleryState = (state = initialState, action) => {
   switch (action.type) {
-    case 'UPDATE':
+    case 'UPDATE-GALLERY':
       return { photoList: action.photoList };
     default:
       return state;

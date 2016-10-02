@@ -1,11 +1,11 @@
 const initialState = {
-  selectedImg: null
+  selectedImg: 1
 };
 
 // Reducer
 const viewerState = (state = initialState, action) => {
   switch (action.type) {
-    case 'UPDATE':
+    case 'UPDATE-VIEWER':
       return { selectedImg: action.selectedImg };
     default:
       return state;
