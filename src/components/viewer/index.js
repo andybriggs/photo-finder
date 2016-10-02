@@ -1,15 +1,26 @@
 import React from 'react';
+import { Icon } from 'react-fa';
 import store from '../../store';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 
 const Viewer = ({ selectedImg, selectedImgNumber }) => {
   if(selectedImg) {
-    return (<div className={css(style.container)}>
-        <img src={selectedImg.url} alt={selectedImg.title} className={css(style.img)}/>
-        <ul>
-          <li><a href="" onClick={handleClick.bind(this, selectedImgNumber, "prev")}>&lt;</a></li>
-          <li><a href="" onClick={handleClick.bind(this, selectedImgNumber, "next")}>&gt;</a></li>
+    return (<div className={css(style.container, style.viewer)}>
+        <div className={css(style.imgWindow)}>
+          <img src={selectedImg.url} alt={selectedImg.title} className={css(style.img)}/>
+        </div>
+        <ul className={css(style.navList)}>
+          <li className={css(style.navButtonWrapper)}>
+            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "prev")}>
+              <Icon name="chevron-left" />
+            </a>
+          </li>
+          <li className={css(style.navButtonWrapper)}>
+            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "next")}>
+              <Icon name="chevron-right" />
+            </a>
+          </li>
         </ul>
       </div>)
   } else {
