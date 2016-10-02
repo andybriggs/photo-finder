@@ -1,5 +1,5 @@
 import { StyleSheet } from 'aphrodite/no-important';
-import commonStyles from '../commonStyles';
+import commonStyles from '../style/commonStyles';
 
 const styles = StyleSheet.create({
   container: commonStyles.container,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import store from './store';
+import style from './components/style/globals.css';
 import { Header, Viewer, Gallery, Pagination } from './components';
 
 export default class App extends Component {
