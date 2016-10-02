@@ -3,13 +3,23 @@ import commonStyles from '../commonStyles';
 
 const styles = StyleSheet.create({
   container: commonStyles.container,
+  gallery: {
+    overflow: 'auto',
+    marginBottom: 15
+  },
   photoList: {
     padding: 0
   },
   photoWrapper: {
     float: 'left',
-    width: '32%',
-    marginRight: '1%'
+    width: '18%',
+    marginRight: '2%',
+    height: 100,
+    overflow: 'hidden',
+    marginBottom: 10,
+    ':hover': {
+      border: '5px solid #fab630'
+    }
   },
   photo: {
     maxWidth: '100%'

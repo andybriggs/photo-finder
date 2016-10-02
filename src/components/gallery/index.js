@@ -7,7 +7,7 @@ const Gallery = (props) => {
   if(props.photoList) {
     const pageList = createPageList(props.page, props.photoList);
     return (
-      <div className={css(style.container)}>
+      <div className={css(style.container, style.gallery)}>
         <ul className={css(style.photoList)}>
           {pageList.map((photo, index) => {
             return(

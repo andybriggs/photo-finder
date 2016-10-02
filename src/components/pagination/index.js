@@ -1,5 +1,8 @@
 import React from 'react';
 import store from '../../store';
+import { css } from 'aphrodite/no-important';
+import style from './style';
+import { Icon } from 'react-fa';
 
 const Pagination = (props) => {
 
@@ -9,13 +12,33 @@ const Pagination = (props) => {
     const nextPage = calcIndex("next", props.currentPage, pageCount);
     const lastPage = calcIndex("last", props.currentPage, pageCount);
 
-    return (<ul>
-      <li><a href="" onClick={handleClick.bind(this, 0)}>&lt;&lt;</a></li>
-      <li><a href="" onClick={handleClick.bind(this, previousPage)}>&lt;</a></li>
-      {createPaging(pageCount)}
-      <li><a href="" onClick={handleClick.bind(this, nextPage)}>&gt;</a></li>
-      <li><a href="" onClick={handleClick.bind(this, lastPage)}>&gt;&gt;</a></li>
-    </ul>)
+    return (<div className={css(style.container)}>
+      <ul className={css(style.pagination)}>
+        <li className={css(style.linkWrap)}>
+          <a href="" className={css(style.link)} onClick={handleClick.bind(this, 0)}>
+            <Icon name="chevron-left" />
+            <Icon name="chevron-left" />
+          </a>
+        </li>
+        <li className={css(style.linkWrap)}>
+          <a href="" className={css(style.link)} onClick={handleClick.bind(this, previousPage)}>
+            <Icon name="chevron-left" />
+          </a>
+        </li>
+        {createPaging(pageCount)}
+        <li className={css(style.linkWrap)}>
+          <a href="" className={css(style.link)} onClick={handleClick.bind(this, nextPage)}>
+            <Icon name="chevron-right" />
+          </a>
+        </li>
+        <li className={css(style.linkWrap)}>
+          <a href="" className={css(style.link)} onClick={handleClick.bind(this, lastPage)}>
+            <Icon name="chevron-right" />
+            <Icon name="chevron-right" />
+          </a>
+        </li>
+      </ul>
+    </div>)
   } else {
     return false;
   }
@@ -24,7 +47,7 @@ const Pagination = (props) => {
 const createPaging = (pageCount) => {
   let paging = [];
   for (let i = 0; i < pageCount; i++) {
-    paging.push(<li key={i}><a href="" onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
+    paging.push(<li key={i} className={css(style.linkWrap)}><a href="" className={css(style.link)} onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
   }
   return paging;
 }

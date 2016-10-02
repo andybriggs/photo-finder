@@ -7,7 +7,11 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   imgWindow: {
-    background: '#222'
+    background: '#222',
+    marginTop: 15,
+    position: 'relative',
+    height: 300,
+    overflow: 'hidden'
   },
   img: {
     width:' 100%',
@@ -34,6 +38,7 @@ const styles = StyleSheet.create({
     padding: '10px 15px',
     background: 'rgba(0,0,0,0.5)',
     borderRadius: '50%',
+    border: '1px solid #fff',
     ':hover': {
       background: '#000',
       color: '#fab630'
