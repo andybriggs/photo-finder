@@ -1,7 +1,7 @@
 const initialState = {
   photoList: null,
   page: 1,
-  selectedImg: 1,
+  selectedImg: 0,
   loading: false
 };
 

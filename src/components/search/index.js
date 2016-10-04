@@ -24,6 +24,7 @@ class Search extends Component {
   searchApi = () => {
     const query = this.getValue();
     const _this = this;
+    this.updateGallery([]);
     this.loadingState(true);
     request
       .get(`https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=?&safe_search=moderate&api_key=d1d6c2d4a3494e35bba4b7bda21cb826&text=${query}`)
