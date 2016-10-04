@@ -3,6 +3,7 @@ import { Icon } from 'react-fa';
 import store from '../../store';
 import { css } from 'aphrodite/no-important';
 import style from './style';
+import Image from '../image'
 
 const Gallery = (props) => {
   if(props.photoList && props.loading === false) {
@@ -14,7 +15,7 @@ const Gallery = (props) => {
             return(
               <li key={index} className={css(style.photoWrapper)}>
                 <a href="" onClick={handleClick.bind(this, photo.photoIndex)}>
-                  <img className={css(style.photo)} src={photo.url} alt={photo.title} />
+                  <Image imgStyle={css(style.photo)} imgSrc={photo.url} imgAlt={photo.title} />
                 </a>
               </li>);
           })}
@@ -22,7 +23,7 @@ const Gallery = (props) => {
       </div>
     )
   } else if (props.loading === true) {
-    return (<Icon className={css(style.loading)} name="circle-o-notch" spin />)
+    return (<Icon className={css(style.loader)} name="circle-o-notch" spin />)
   } else {
     return false;
   }

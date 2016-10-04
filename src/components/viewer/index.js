@@ -38,7 +38,7 @@ const handleClick = (selectedImgNumber, action, e) => {
   } else if (action === "prev") {
     selectedImg = selectedImgNumber -1;
   }
-  console.log(selectedImg);
+
   store.dispatch({
     type: 'UPDATE-VIEWER',
     selectedImg
