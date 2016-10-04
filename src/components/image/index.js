@@ -14,6 +14,12 @@ export default class Image extends Component {
       imageClasses: css(style.hide)
     });
   }
+  componentWillReceiveProps() {
+    this.setState({
+      loaderClasses: css(style.loader),
+      imageClasses: css(style.hide)
+    });
+  }
   handleLoaded() {
     this.setState({
       loaderClasses: css(style.hide, style.loader),
