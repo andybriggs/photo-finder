@@ -51,13 +51,6 @@ describe('Search component', () => {
       stub.called.should.be.true();
     });
 
-    it.skip('should update gallery', () => {
-      // not working
-      wrapper.setState({ inputValue: 'Hammer time' });
-      wrapper.find('button').simulate('click', { preventDefault() {} });
-      const appState = store.getState();
-    });
-
   });
 
 });

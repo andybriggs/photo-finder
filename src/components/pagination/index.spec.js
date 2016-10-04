@@ -14,8 +14,9 @@ describe('Pagination component', () => {
     wrapper.find('ul').should.have.length(1);
   });
 
-  it.skip('should return 7 page links', () => {
-    wrapper.find('li').should.have.length(7);
+  it('should return 11 page links', () => {
+    const listLength = wrapper.find('li').length;
+    listLength.should.equal(11);
   });
 
 });
