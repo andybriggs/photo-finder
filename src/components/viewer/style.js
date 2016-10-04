@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width:' 100%',
     maxWidth: 600,
     display: 'block',
-    position: 'relative',
+    position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)'

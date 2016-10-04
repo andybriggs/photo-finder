@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-fa';
+import Image from '../image';
 import store from '../../store';
 import { css } from 'aphrodite/no-important';
 import style from './style';
@@ -8,7 +9,7 @@ const Viewer = ({ selectedImg, selectedImgNumber }) => {
   if(selectedImg) {
     return (<div className={css(style.container, style.viewer)}>
         <div className={css(style.imgWindow)}>
-          <img src={selectedImg.url} alt={selectedImg.title} className={css(style.img)}/>
+          <Image imgSrc={selectedImg.url} imgAlt={selectedImg.title} imgStyle={css(style.img)} />
         </div>
         <ul className={css(style.navList)}>
           <li className={css(style.navButtonWrapper)}>
