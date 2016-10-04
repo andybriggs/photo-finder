@@ -5,7 +5,7 @@ import store from '../../store';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 
-const Viewer = ({ selectedImg, selectedImgNumber }) => {
+const Viewer = ({ selectedImg, selectedImgNumber, photoCount }) => {
   if(selectedImg) {
     return (<div className={css(style.container, style.viewer)}>
         <div className={css(style.imgWindow)}>
@@ -13,12 +13,12 @@ const Viewer = ({ selectedImg, selectedImgNumber }) => {
         </div>
         <ul className={css(style.navList)}>
           <li className={css(style.navButtonWrapper)}>
-            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "prev")}>
+            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "prev", photoCount)}>
               <Icon name="chevron-left" />
             </a>
           </li>
           <li className={css(style.navButtonWrapper)}>
-            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "next")}>
+            <a href="" className={css(style.navButton)} onClick={handleClick.bind(this, selectedImgNumber, "next", photoCount)}>
               <Icon name="chevron-right" />
             </a>
           </li>
@@ -29,15 +29,17 @@ const Viewer = ({ selectedImg, selectedImgNumber }) => {
   }
 };
 
-const handleClick = (selectedImgNumber, action, e) => {
+const handleClick = (selectedImgNumber, action, photoCount, e) => {
 
   e.preventDefault();
   let selectedImg;
 
-  if(action === "next") {
+  if(action === "next" && selectedImgNumber < photoCount -1) {
     selectedImg = selectedImgNumber + 1;
-  } else if (action === "prev") {
+  } else if (action === "prev" && selectedImgNumber != 0) {
     selectedImg = selectedImgNumber -1;
+  } else {
+    selectedImg = selectedImgNumber;
   }
 
   store.dispatch({

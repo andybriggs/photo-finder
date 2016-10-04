@@ -21,10 +21,10 @@ export default class App extends Component {
     let selectedImg = photoList ? photoList[this.state.galleryState.selectedImg] : null;
     let showPaging = photoList ? true : false;
     let photoCount = photoList ? photoList.length : 0;
-    
+
     return (<div>
       <Header />
-      <Viewer selectedImg={selectedImg} selectedImgNumber={this.state.galleryState.selectedImg} />
+      <Viewer selectedImg={selectedImg} selectedImgNumber={this.state.galleryState.selectedImg} photoCount={photoCount} />
       <Gallery photoList={photoList} page={this.state.galleryState.page} loading={this.state.galleryState.loading} />
       <Pagination photoCount={photoCount} currentPage={this.state.galleryState.page} />
     </div>)
