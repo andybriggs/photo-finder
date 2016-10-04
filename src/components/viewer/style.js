@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     background: '#222',
     marginTop: 15,
     position: 'relative',
-    height: 300,
+    height: '40vh',
+    maxHeight: 500,
     overflow: 'hidden'
   },
   img: {
