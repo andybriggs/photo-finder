@@ -14,16 +14,18 @@ export default class Image extends Component {
       imageClasses: css(style.hide)
     });
   }
-  componentWillReceiveProps() {
-    this.setState({
-      loaderClasses: css(style.loader),
-      imageClasses: css(style.hide)
-    });
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.imgSrc != this.props.imgSrc) {
+      this.setState({
+        loaderClasses: css(style.loader),
+        imageClasses: css(style.hide)
+      });  
+    }
   }
   handleLoaded() {
     this.setState({
       loaderClasses: css(style.hide, style.loader),
-      imageClasses: this.props.imgStyle
+      imageClasses: this.props.imgStyle,
     });
   }
   render() {
