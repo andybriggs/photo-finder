@@ -12,7 +12,9 @@
 
 `npm start`
 
-## Run tests
+Go to  `http://localhost:3000/`
+
+## Run test suite
 
 `npm test`
 
