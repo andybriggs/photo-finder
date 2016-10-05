@@ -7,10 +7,10 @@ import { Icon } from 'react-fa';
 const Pagination = (props) => {
 
   if(props.photoCount) {
-    const pageCount = createPageCount(props.photoCount);
-    const previousPage = calcIndex("prev", props.currentPage, pageCount);
-    const nextPage = calcIndex("next", props.currentPage, pageCount);
-    const lastPage = calcIndex("last", props.currentPage, pageCount);
+    const pageCount = createPageCount(props.photoCount),
+    previousPage = calcIndex("prev", props.currentPage, pageCount),
+    nextPage = calcIndex("next", props.currentPage, pageCount),
+    lastPage = calcIndex("last", props.currentPage, pageCount);
 
     return (<div className={css(style.container)}>
       <ul className={css(style.pagination)}>
@@ -25,7 +25,7 @@ const Pagination = (props) => {
             <Icon name="chevron-left" />
           </a>
         </li>
-        {createPaging(pageCount)}
+        {createPaging(pageCount, props.currentPage)}
         <li className={css(style.linkWrap)}>
           <a href="" className={css(style.link)} onClick={handleClick.bind(this, nextPage)}>
             <Icon name="chevron-right" />
@@ -44,10 +44,11 @@ const Pagination = (props) => {
   }
 }
 
-const createPaging = (pageCount) => {
+const createPaging = (pageCount, currentPage) => {
   let paging = [];
   for (let i = 0; i < pageCount; i++) {
-    paging.push(<li key={i} className={css(style.linkWrap)}><a href="" className={css(style.link)} onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
+    let linkClasses = pageCount === i ?  css(style.link) : css(style.link);
+    paging.push(<li key={i} className={css(style.linkWrap)}><a href="" className={linkClasses} onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
   }
   return paging;
 }
