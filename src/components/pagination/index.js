@@ -47,8 +47,6 @@ const Pagination = (props) => {
 const createPaging = (pageCount, currentPage) => {
   let paging = [];
   for (let i = 0; i < pageCount; i++) {
-    console.log(currentPage);
-    console.log(i);
     let linkClasses = currentPage === i + 1 ?  css(style.link, style.linkActive) : css(style.link);
     paging.push(<li key={i} className={css(style.linkWrap)}><a href="" className={linkClasses} onClick={handleClick.bind(this, i)}>{i + 1}</a></li>);
   }

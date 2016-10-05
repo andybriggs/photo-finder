@@ -3,8 +3,12 @@ import commonStyles from '../style/commonStyles';
 
 const styles = StyleSheet.create({
   loader: commonStyles.loader,
+  show: {
+    opacity: 1,
+    transition: 'opacity 0.5s'
+  },
   hide: {
-    display: 'none'
+    opacity: 0
   }
 });
 

@@ -19,13 +19,14 @@ export default class Image extends Component {
       this.setState({
         loaderClasses: css(style.loader),
         imageClasses: css(style.hide)
-      });  
+      });
     }
   }
   handleLoaded() {
+    const loadedClasses = `${css(style.show)} ${this.props.imgStyle}`
     this.setState({
       loaderClasses: css(style.hide, style.loader),
-      imageClasses: this.props.imgStyle,
+      imageClasses: loadedClasses
     });
   }
   render() {
