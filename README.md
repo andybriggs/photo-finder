@@ -31,3 +31,4 @@ Go to  `http://localhost:3000/`
 * Superagent - HTTP request library
 * Uglify - minification for distribution config
 * Aphrodite - Style implementation, recommended by Oliver
+* FontAwesome - quick solution for icons - probably would go custom with more time
