@@ -15,7 +15,8 @@ const commonStyles = {
     transform: 'translate(-50%, -50%)'
   },
   colours: {
-    brandYellow: '#fab630'
+    yellow: '#fab630',
+    black: '#000'
   }
 }
 

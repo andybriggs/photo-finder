@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
       marginRight: 0
     },
     ':hover': {
-      border: `5px solid ${commonStyles.colours.brandYellow}`
+      border: `5px solid ${commonStyles.colours.yellow}`
     }
   },
   photo: {
