@@ -21,3 +21,13 @@ Go to  `http://localhost:3000/`
 ## Create distribution bundle
 
 `npm run build`
+
+## Packages of note
+
+* Webpack - Bundling
+* Babel - Transpiling for ES6 and ES7
+* Mocha/Enzyme/Should - Testing suite
+* Flux/Redux - Data flow
+* Superagent - HTTP request library
+* Uglify - minification for distribution config
+* Aphrodite - Style implementation, recommended by Oliver
