@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   title: {
-      color: '#fab630'
+      color: commonStyles.colours.brandYellow
   }
 });
 

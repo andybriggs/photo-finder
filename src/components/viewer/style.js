@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     border: '1px solid #fff',
     ':hover': {
       background: '#000',
-      color: '#fab630'
+      color: commonStyles.colours.brandYellow
     }
   }
 });

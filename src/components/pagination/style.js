@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
       padding: 10
     },
     ':hover': {
-      background: '#fab630',
+      background: commonStyles.colours.brandYellow
     }
   }
 
