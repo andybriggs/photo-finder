@@ -30,9 +30,9 @@ const Gallery = (props) => {
 };
 
 const createPageList = (page, photoList) => {
-  const end = parseInt(page * 15);
-  const start = parseInt(end -15);
-  const pageList = photoList.slice(start, end);
+  const end = parseInt(page * 15),
+  start = parseInt(end -15),
+  pageList = photoList.slice(start, end);
   for(page in pageList) {
     pageList[page].photoIndex = start + parseInt(page);
   }

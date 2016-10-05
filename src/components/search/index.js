@@ -22,8 +22,8 @@ class Search extends Component {
   }
 
   searchApi = () => {
-    const query = this.getValue();
-    const _this = this;
+    const query = this.getValue(),
+    _this = this;
     this.updateGallery([]);
     this.loadingState(true);
     request

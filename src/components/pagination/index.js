@@ -71,8 +71,8 @@ const calcIndex = (action, currentPage, pageCount) => {
 
 const handleClick = (index, e) => {
   e.preventDefault();
-  const page = index + 1;
-  const selectedImg = (page * 15) - 15;
+  const page = index + 1,
+  selectedImg = (page * 15) - 15;
   store.dispatch({
     type: 'UPDATE-PAGE',
     selectedImg,
