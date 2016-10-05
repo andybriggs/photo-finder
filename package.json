@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha -r should -r ignore-styles ./test-setup/jsdom.js --compilers js:babel-core/register src/**/*spec.js",
-    "build": "webpack"
+    "build": "webpack --config webpack.dist.config.js"
   },
   "author": "Andy Briggs",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "superagent": "^2.3.0",
+    "uglify-js": "^2.7.3",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
