@@ -2,7 +2,7 @@
 
 ## Setup
 
-`git clone git@bitbucket.org:abriggs/photofinder.git`
+`git clone git@github.com:andybriggs/photo-finder.git`
 
 `cd photofinder`
 
@@ -30,5 +30,5 @@ Go to  `http://localhost:3000/`
 * Flux/Redux - Data flow
 * Superagent - HTTP request library
 * Uglify - minification for distribution config
-* Aphrodite - Style implementation, recommended by Oliver
-* FontAwesome - quick solution for icons - probably would go custom with more time
+* Aphrodite - Style implementation
+* FontAwesome - quick solution for icons
